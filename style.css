@@ -1,0 +1,575 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poetsen+One&display=swap');
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: sans-serif;
+
+
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ body {
+     color: #000000;
+     margin: 0;
+
+ }
+
+ #header {
+     width: 100%;
+     background-color: #222831;
+ }
+
+ nav {
+     width: 100%;
+     height: 80px;
+     padding: 0 40px;
+     background-color: #66BFBF;
+     margin: 0;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     top: 0;
+     z-index: 2;
+     position: fixed;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.85);
+     overflow: hidden;
+     left: 0;
+ }
+
+ .logo-container,
+ .icons {
+     flex-basis: 20%;
+ }
+
+ .logo-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .logo-container h6 {
+     font-size: 20px;
+     text-align: center;
+     color: white;
+     margin-right: 10px;
+ }
+
+ .nav-links {
+     flex-basis: 60%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ nav img {
+     width: 150px;
+     height: 100px;
+
+ }
+
+ nav ul li {
+     display: inline-block;
+     list-style: none;
+     margin: 0 30px;
+ }
+
+ nav ul li a {
+     text-decoration: none;
+     font-size: 20px;
+     color: #F7F9F2;
+     position: relative;
+     -webkit-tap-highlight-color: transparent;
+
+
+ }
+
+ ul li a::after {
+     content: '';
+     width: 0;
+     height: 3px;
+     background-color: white;
+     left: 0;
+     bottom: -6px;
+     position: absolute;
+     transition: 0.5s;
+
+ }
+
+ ul li a:hover::after {
+     width: 100%;
+ }
+
+ #remove,
+ #bars {
+     display: none;
+
+ }
+
+ .side-nav {
+     display: flex;
+     justify-content: space-between;
+     flex-basis: 20%;
+
+ }
+
+ span {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+ }
+
+ span a {
+     color: white;
+     margin: 0 5px;
+     padding: 0 10px;
+     font-size: 40px;
+     text-decoration: none;
+     -webkit-tap-highlight-color: transparent;
+     transition: 0.2s;
+     border-radius: 5px;
+ }
+
+ span a:hover {
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ }
+
+
+ #home,
+ #about,
+ #members{
+     display: flex;
+     color: white;
+     height: 100vh;
+     width: 100%;
+
+ }
+
+ #home {
+     width: 100%;
+     padding-top: 80px;
+     height: 100vh;
+
+ }
+
+ .home-container {
+     height: 100%;
+     width: 100%;
+     display: flex;
+     border: 1px solid black;
+
+ }
+
+ video {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: block;
+     object-fit: cover;
+     z-index: -1;
+     position: fixed;
+
+ }
+
+ .bgcontent {
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.35);
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     padding: 0;
+ }
+
+ .bgcontent h1 {
+     font-size: 150px;
+     font-family: "Poetsen One", sans-serif;
+     text-align: center;
+     -webkit-text-stroke: white;
+     -webkit-text-stroke-width: 2px;
+     margin-bottom: 0;
+     color: transparent;
+ }
+
+ .bgcontent p {
+     font-size: 30px;
+     margin-bottom: 20px;
+ }
+
+ .bgcontent button {
+     width: 250px;
+     height: 50px;
+     letter-spacing: 2px;
+     font-weight: 600;
+     background: transparent;
+     border: 1px solid white;
+     color: white;
+     border-radius: 10px;
+ }
+
+ .bgcontent button:hover {
+     color: black;
+     background: white;
+     transition: 0.5s;
+ }
+
+ #about {
+     width: 100%;
+     height: auto;
+     display: flex;
+     padding: 80px 5%;
+     align-items: center;
+     justify-content: center;
+     background: #EAF6F6;
+ }
+
+ .about-content {
+     color: black;
+     height: 100%;
+     flex-basis: 45%;
+ }
+
+ .about-content p {
+     font-size: 20px;
+     line-height: 1.6rem;
+     text-align: justify;
+ }
+
+ .about-content h1,.members-heading h1, #albums h1, #livestreams h1{
+     color: #66BFBF;
+     font-family: "Poetsen One", sans-serif;
+     text-align: center;
+     font-size: 30px;
+     margin-bottom: 20px;
+ }
+
+ .slideshow-container {
+     height: 50%;
+     position: relative;
+     flex-basis: 45%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+
+ }
+
+ /* Hide the images by default */
+ .mySlides{
+     display: none;
+     width: 500px;
+     height: 500px;
+ }
+
+ .mySlides img, .myalbum img{
+     object-position: center;
+     object-fit: fill;
+     width: 100%;
+     height: 100%;
+     border-radius: 15px;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.65);
+ }
+
+
+ /* Caption text */
+ .text {
+     color: #f2f2f2;
+     font-size: 15px;
+     padding: 8px 12px;
+     position: absolute;
+     bottom: 8px;
+     width: 100%;
+     text-align: center;
+ }
+
+ /* Number text (1/3 etc) */
+ .numbertext {
+     color: #f2f2f2;
+     font-size: 12px;
+     padding: 8px 12px;
+     position: absolute;
+     top: 0;
+ }
+
+ /* The dots/bullets/indicators */
+ .dot{
+     cursor: pointer;
+     height: 10px;
+     width: 10px;
+     margin: 5px 2px;
+     background-color: #bbb;
+     border-radius: 50%;
+     display: inline-block;
+     transition: background-color 0.6s ease;
+ }
+
+ .active,
+ .dot:hover, .dots:hover{
+     background-color: black;
+ }
+
+ /* Fading animation */
+ .fade {
+     animation-name: fade;
+     animation-duration: 1.5s;
+ }
+
+ @keyframes fade {
+     from {
+         opacity: .4
+     }
+
+     to {
+         opacity: 1
+     }
+ }
+
+ #members {
+     width: 100%;
+     height: auto;
+     display: flex;
+     padding: 80px 0;
+     align-items: center;
+     justify-content: center;
+     background: #EAF6F6;
+ }
+ 
+ .members-container{
+     height: 100%;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+.members-content{
+    display: grid;
+     grid-template-columns: repeat(auto-fill, 300px);
+     gap: 20px;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     padding: 10px 80px;
+     box-sizing: border-box;
+}
+
+.bini-pics{
+    height: 400px;
+    width: 300px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.65 );
+    border-radius: 15px;
+    position: relative;
+}
+.bini-pics img{
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  border-radius: 15px;
+  transition: .5s ease;
+  background: linear-gradient(180deg, rgba(38,36,36,0) 0%, rgba(102,191,191, 1) 100%);
+}
+
+.bini-pics:hover .overlay{
+  opacity: 1;
+}
+
+.overlaytext {
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+ } 
+ 
+.overlaytext h1{
+    font-family: "Poetsen One", sans-serif;
+    text-shadow: 4px 3px 0px #7A7A7A;
+    margin-bottom: 15px;
+}
+
+.overlaytext p{
+    font-style: italic;
+    font-size: 14px;
+}
+
+#albums, #livestreams{
+    width: 100%;
+     display: flex;
+     padding: 100px 40px;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     background-color: #EAF6F6; 
+}
+
+#albums{
+    height: auto;
+}
+.album-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+     grid-template-columns: repeat(auto-fill, 300px);
+     gap: 20px;
+     padding: 0 80px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.myalbum{
+    display: flex;
+    position: relative;
+     width: 300px;
+     height: 200px;
+     margin-bottom: 10px;
+}
+
+.myalbum:hover .overlay{
+    opacity: 1;
+}
+
+.myalbum .overlaytext{
+    top: 50%;
+}
+
+
+.myalbum .overlay{
+      background: linear-gradient(180deg, rgba(38,36,36,0) 0%, rgba(0,0,0,0.8) 100%);
+}
+.overlay button{
+    width: 150px;
+    height: 30px;
+    color: black;
+    background: #ffffff;
+    border-radius: 20px;
+    border: none;
+}
+
+#livestreams{
+    height: auto;
+
+}
+#livestreams iframe{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.35);
+    border-radius: 10px;
+}
+
+ @media only screen and (max-width:1024px) {
+     span a {
+         font-size: 30px;
+     }
+
+     nav {
+         padding: 0 20px;
+
+     }
+
+     nav ul {
+         background-color: #151515;
+         width: 200px;
+         height: 100vh;
+         position: fixed;
+         top: 0;
+         right: 0;
+         padding-top: 50px;
+         display: none;
+         z-index: 2;
+         transition: 0.5s;
+         background: #66BFBF;
+         box-shadow: 0 5px 15px rgba(0,0,0,0.85);
+
+
+     }
+
+     nav ul li {
+         margin: 20px;
+         width: 100%;
+         text-align: center;
+     }
+
+     .nav-links ul li a {
+         margin: 50px 0;
+
+
+     }
+
+     #remove {
+         color: white;
+         top: 25px;
+         left: 25px;
+         position: absolute;
+         margin-bottom: 10px;
+         display: block;
+     }
+
+     #bars {
+         display: block;
+         color: white;
+         font-size: 30px;
+         margin-left: 10px;
+     }
+
+     .bgcontent h1 {
+         font-size: 100px;
+         line-height: 90px;
+         margin-bottom: 20px;
+     }
+   .bgcontent p{
+       font-size: 20px;
+   }
+   .bgcontent button{
+       height: 40px;
+       width: 150px;
+   }
+     #about {
+         flex-direction: column;
+     }
+
+     .slideshow-container {
+         width: 100%;
+         height: 350px;
+         margin-bottom: 10px;
+     }
+
+     .mySlides {
+         width: 100%;
+         height: 500px;
+     }
+
+     .about-content p {
+         font-size: 15px;
+         line-height: 1.3rem;
+     }
+     
+    #about{
+        height: auto;
+    }
+ }
