@@ -30,3 +30,26 @@ document.getElementById("bars").addEventListener("click", () => {
      const menu = document.querySelector(".menu");
      menu.style.display= "block";
 });
+
+// script.js
+// Select all the sections
+const sections = document.querySelectorAll('.content-section');
+
+function showSectionOnScroll() {
+  const triggerBottom = window.innerHeight / 5 * 4;
+
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    
+    // Check if the section is within the viewport
+    if (sectionTop < triggerBottom) {
+      section.classList.add('show');
+    } else {
+      section.classList.remove('show');
+    }
+  });
+}
+
+// Run the function when the page loads and on scroll
+window.addEventListener('scroll', showSectionOnScroll);
+showSectionOnScroll(); // To show sections that are already in view on page load
