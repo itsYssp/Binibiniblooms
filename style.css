@@ -225,7 +225,7 @@
      width: 100%;
      height: auto;
      display: flex;
-     padding: 80px 5%;
+     padding: 100px 5%;
      align-items: center;
      justify-content: center;
      background: #EAF6F6;
@@ -313,7 +313,7 @@
 
  .active,
  .dot:hover, .dots:hover{
-     background-color: black;
+     background-color: #66BFBF;
  }
 
  /* Fading animation */
@@ -388,8 +388,13 @@
   width: 100%;
   opacity: 0;
   border-radius: 15px;
-  transition: .5s ease;
+  transition: .2s ease ;
   background: linear-gradient(180deg, rgba(38,36,36,0) 0%, rgba(102,191,191, 1) 100%);
+}
+
+.bini-pics:hover, .myalbum:hover{
+    transform: scale(1.02);
+    transition: transform 0.2s;
 }
 
 .bini-pics:hover .overlay{
@@ -471,15 +476,92 @@
     background: #ffffff;
     border-radius: 20px;
     border: none;
+    opacity: .8;
 }
 
 #livestreams{
     height: auto;
 
 }
+.livestream-container{
+    width: 100%;
+    height: 100%;
+}
 #livestreams iframe{
     box-shadow: 0 5px 15px rgba(0,0,0,0.35);
     border-radius: 10px;
+}
+
+footer{
+    height: auto;
+    width: 100%;
+    padding: 40px 0 20px ;
+    background-color: #66BFBF;
+    color: #EAF6F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+footer .socials{
+    padding: 10px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.socials h3{
+    letter-spacing: 1px;
+    font-family: "Poetsen One", sans-serif;
+    font-size: 30px;
+    margin: 10px 0;
+}
+.socials .socials-link p{
+    display: inline-block;
+}
+.socials p a {
+    width: 100%;
+    text-decoration: none;
+    font-style: none;
+    color: #f1eded;
+    margin: 5px;
+    position: relative;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 40px;
+}
+
+.socials-link p{
+    margin: 10px;
+}
+
+.socials-link p a::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -6px;
+    background-color: #EAF6F6;
+    transition: 0.5s;
+    position: absolute;
+
+}
+
+.socials p a:hover::after{
+    width: 100%;
+}
+
+.content-section {
+    opacity: 0;
+    transform: translateY(20px); /* Slide up when in view */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.show{
+    opacity: 1;
+    transform: translateY(0);
 }
 
  @media only screen and (max-width:1024px) {
@@ -570,6 +652,10 @@
      }
      
     #about{
+        height: auto;
+    }
+
+    footer{
         height: auto;
     }
  }
